@@ -1,0 +1,11 @@
+[book]
+authors = ["sliman4"]
+language = "en"
+src = "src"
+title = "CraftCoin Litepaper"
+description = "CraftCoin Litepaper"
+
+[output.html]
+curly-quotes = true
+git-repository-url = "https://github.com/CraftToken/litepaper"
+edit-url-template = "https://github.com/CraftToken/litepaper/edit/main/{path}"
