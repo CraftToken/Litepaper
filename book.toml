@@ -9,3 +9,4 @@ description = "CraftCoin Litepaper"
 curly-quotes = true
 git-repository-url = "https://github.com/CraftToken/litepaper"
 edit-url-template = "https://github.com/CraftToken/litepaper/edit/main/{path}"
+cname = "litepaper.craftcoin.tech"
