@@ -4,7 +4,8 @@ You can easily monetize your server with CraftCoin. You don't need to build
 a website, integrate payment systems, you just need a plugin and a smart
 contract (right now you need a developer for this, but in future there'll
 be more user-friendly solutions). But it doesn't mean you don't have to pay
-taxes.
+taxes. How crypto taxes work depends on your country, so contact your
+lawyer if you have any questions. 
 
 ## NFTs
 
@@ -21,12 +22,12 @@ for a fixed price, or even have custom minting algorithms with plugins or
 smart contracts.
 
 You can also set a creator fee so you get some money every time someone
-buys / sells your server's NFT, that's another way of monetization.
+buys / sells your server's NFT.
 
 ## Plugins
 
 - WalletConnectMC (Crypto integration using WalletConnect protocol) --
-  [Done](https://github.com/CraftToken/WalletConnectMC)
+  [Done](https://github.com/CraftToken/WalletConnectMC).
 - CryptoPayments (A simple plugin that integrates crypto payments into
   Minecraft) -- Coming soon.
 - NFTIsland (BentoBox addon for skyblock-like gamemodes) -- Ready, will be
@@ -43,8 +44,13 @@ buys / sells your server's NFT, that's another way of monetization.
 - NFTBattlePass (Plugin for NFT battle pass) -- Coming soon.
 - NFTHolderCommands (Plugin for ultimate NFT benefit customization using
   your NFT contract's custom functions and commands) -- Coming soon.
+- CraftCoin (Plugin that creates /transfer command and CRAFT balance
+placeholders) -- [Done](https://github.com/CraftToken/CraftCoinPlugin).
 
-> Want to list your plugin
-> here? [Edit this page on GitHub](https://github.com/CraftToken/Litepaper/edit/main/src/for-server-owners.md)
+> Want to list your plugin here?
+> [Edit this page on GitHub](https://github.com/CraftToken/Litepaper/edit/main/src/for-server-owners.md).
+> 
+> In future, we'll have our own plugin registry or a category in some
+> existing plugin marketplace.
 
 
