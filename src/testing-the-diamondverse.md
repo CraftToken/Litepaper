@@ -9,7 +9,7 @@ a level that will increase for every bug that you find. Bigger level =
 bigger rewards.
 
 ## Test wallet
-We have a [test wallet](https://test-wallet.craftcoin.tech) that can be used
+We have a [test wallet](https://testwallet.craftcoin.tech) that can be used
 for testing. You don't even need to download it, it's right in your browser.
 
 ## Bug bounty (testnet)
