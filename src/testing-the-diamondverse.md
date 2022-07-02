@@ -1,4 +1,4 @@
-# Testing The Diamondverse (not available yet)
+# Testing The Diamondverse (not available yet, see [Roadmap](./roadmap.md))
 
 Testing is one of the most important things in game development, especially
 in public testing phase, so we want to reward most active testers with
