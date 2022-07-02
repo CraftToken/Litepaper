@@ -3,13 +3,13 @@
 ## Q2 2022
 1. [x] WalletConnect integration, essential plugins for building a crypto
    server.
-2. [ ] Start private sale.
 
 ## Q3 2022
 
-3. [ ] Launch The Diamondverse on testnet -- the first server to adopt
+2. [ ] Launch The Diamondverse on testnet -- the first server to adopt
    CRAFT. If we want a community to adopt CRAFT, we need to do it ourselves
    to see possible pitfalls and provide integration examples.
+3. [ ] Start private sale.
 4. [ ] Write all plugins listed [here](./for-server-owners.md#plugins).
 5. [ ] Stabilize APIs, write technical documentation, some plugin examples.
 6. [ ] Cross-server on-chain guilds and friends system.
