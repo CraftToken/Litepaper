@@ -1,0 +1,489 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>CraftCoin Litepaper</title>
+        <meta name="robots" content="noindex" />
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="CraftCoin Litepaper">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="craftcoin.html"><strong aria-hidden="true">1.</strong> What is CraftCoin</a></li><li class="chapter-item expanded "><a href="getting-started.html"><strong aria-hidden="true">2.</strong> Getting started</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="for-server-owners.html"><strong aria-hidden="true">2.1.</strong> For server owners</a></li><li class="chapter-item expanded "><a href="for-players.html"><strong aria-hidden="true">2.2.</strong> For players</a></li><li class="chapter-item expanded "><a href="for-play-to-earn-gamers.html"><strong aria-hidden="true">2.3.</strong> For play-to-earn gamers</a></li><li class="chapter-item expanded "><a href="for-developers.html"><strong aria-hidden="true">2.4.</strong> For developers</a></li></ol></li><li class="chapter-item expanded "><a href="roadmap.html"><strong aria-hidden="true">3.</strong> Roadmap</a></li><li class="chapter-item expanded "><a href="testing-the-diamondverse.html"><strong aria-hidden="true">4.</strong> Testing The Diamondverse</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">CraftCoin Litepaper</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/CraftToken/litepaper" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="what-is-craftcoin"><a class="header" href="#what-is-craftcoin">What is CraftCoin</a></h1>
+<p>CraftCoin (CRAFT) is a cryptocurrency for a new Minecraft ecosystem for
+players, server owners, developers and creators. Having a crypto wallet is
+completely optional, players can play without a crypto wallet and connect
+it at any time.</p>
+<h2 id="goals"><a class="header" href="#goals">Goals</a></h2>
+<p>Our goal is mass adoption of crypto. A lot of people still think that
+crypto is a scam, NFTs are just useless images (and also a scam), and we
+want to prove opposite by building an ecosystem that makes use of
+cryptocurrency, NFTs and smart contracts.</p>
+<h2 id="tokenomics"><a class="header" href="#tokenomics">Tokenomics</a></h2>
+<p>The initial and total supply is 1,000,000,000 CRAFT:</p>
+<ul>
+<li>25% – Staking rewards, APY: 50% (subject to change by DAO)</li>
+<li>25% – Liquidity rewards, 1 CRAFT is released every second (subject to
+change by DAO)</li>
+<li>25% – Private and public sale</li>
+<li>20% – DAO treasury (for things like promotion campaigns, bug bounties,
+grants, contributor rewards, etc.)</li>
+<li>5% – Contributor rewards (to be used before DAO is implemented)</li>
+</ul>
+<p>You may notice that there’s no “Team” allocation. That’s because we want to
+create a DAO as soon as possible, and we already treat our team as
+full-time paid contributors (including the founder). Minecraft has an
+awesome community of players and developers that made software such as
+Spigot possible, and I believe it doesn’t need one company that owns it
+all.</p>
+<h2 id="why-minecraft"><a class="header" href="#why-minecraft">Why Minecraft?</a></h2>
+<p>Mostly because it’s just a cool game that our founder likes. But also it’s
+the most sold game ever, with hundreds of millions of downloads, thousands
+of servers and developers around the world. Minecraft has all capabilities
+to have a good crypto ecosystem, a lot of plugins and gamemodes for
+interesting gameplay, which is the main p2e problem, is already here, and
+available for free! Minecraft has always been a metaverse, players create
+their own currencies on each servers, and sometimes even create black
+markets, which is really unsafe, and we’re here to solve this problem.</p>
+<p>Minecraft doesn’t have a “central server” where everyone plays, instead
+anyone can create their own server, add plugins and/or mods, invite friends
+and play the way they want, so it’s somewhat decentralized. But every
+server is under admin’s control, so we have a lot of centralized servers,
+but the game itself is not centralized.</p>
+<h2 id="is-it-a-ponzi"><a class="header" href="#is-it-a-ponzi">Is it a ponzi?</a></h2>
+<p>It depends on the server, but usually no. In The Diamondverse, the
+play-to-earn model is mostly selling NFTs to pay-to-win players, who are
+willing to spend money to have more fun on a server. While the income is
+not consistent, it’s simple and fair. When players want to make money,
+investors want to make money, developers want to make money, everyone wants
+to make money at the same time, someone must lose money because we can’t
+just get money out of nowhere, so pay-to-win players is the way. They spend
+money, but they don’t lose money, so it’s a win-win solution.</p>
+<blockquote>
+<p>NOT OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="getting-started"><a class="header" href="#getting-started">Getting started</a></h1>
+<p>CraftCoin is not a server, it’s an ecosystem of servers, plugins and dapps,
+where anyone can create a server, add or code plugins, and run it. We have
+our own server called The Diamondverse, but it’s just the first server
+where we test plugins and showcase progress.</p>
+<p>The Diamondverse will launch in testnet mode in Q3 2022 and you can get
+testnet CRAFT by running <code>/airdrop</code> command (available only once). Then you
+can get CRAFT in daily login rewards, voting rewards, challenges and other
+in-game rewards. It will change when we move to mainnet and new CRAFT
+tokens will have real world value. We decided to limit testnet CRAFT
+because we still need to have a balanced economy so it’s interesting to
+play and test. Most active testnet players will eventually receive mainnet
+airdrops or other rewards. If you’re interested in testing The Diamondverse
+on testnet, see <a href="./testing-the-diamondverse.html">Testing The Diamondverse</a>
+page.</p>
+<h2 id="faq"><a class="header" href="#faq">FAQ</a></h2>
+<p>We don’t have FAQ because the server hasn’t launched yet.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="for-server-owners"><a class="header" href="#for-server-owners">For server owners</a></h1>
+<p>You can easily monetize your server with CraftCoin. You don’t need to build
+a website, integrate payment systems, you just need a plugin and a smart
+contract (right now you need a developer for this, but in future there’ll
+be more user-friendly solutions). But it doesn’t mean you don’t have to pay
+taxes. How crypto taxes work depends on your country, so contact your
+lawyer if you have any questions. </p>
+<h2 id="nfts"><a class="header" href="#nfts">NFTs</a></h2>
+<p>NFTs are tokens that may have the ability to be bought, sold, transferred,
+have metadata, basically everything that you can imagine and code. For
+example, you can have SkyBlock islands, WorldGuard regions, ranks, battle
+pass, diamond sword with custom enchantments, server access pass,
+non-transferable identity NFTs, cosmetics (except for capes), crafting
+recipes, SkyWars kits, almost any in-game asset.</p>
+<p>You can pre-mint a fixed supply and sell them on marketplaces such as
+OpenSea, make a minting command or website where anyone can mint NFTs
+for a fixed price, or even have custom minting algorithms with plugins or
+smart contracts.</p>
+<p>You can also set a creator fee so you get some money every time someone
+buys / sells your server’s NFT.</p>
+<h2 id="plugins"><a class="header" href="#plugins">Plugins</a></h2>
+<ul>
+<li>WalletConnectMC (Crypto integration using WalletConnect protocol) –
+<a href="https://github.com/CraftToken/WalletConnectMC">Done</a>.</li>
+<li>CryptoPayments (A simple plugin that integrates crypto payments into
+Minecraft) – Coming soon.</li>
+<li>NFTIsland (BentoBox addon for skyblock-like gamemodes) – Ready, will be
+available soon.</li>
+<li>NFTItems (Plugin that wraps items into NFTs and vice versa) – Coming
+soon.</li>
+<li>SimpleNFTs (Plugin for manual minting and burning of NFTs with commands
+for interoperability) – Coming soon</li>
+<li>FInventory (Plugin that allows you to see your ERC1155 fungible tokens and
+interact with them in-game, API for other plugins) – Ready, will be
+available soon.</li>
+<li>NFInventory (Plugin for NFT tracking and GUI inventory) – Coming soon.</li>
+<li>NFTRanks (Plugin that uses NFTs to give permission groups) – Coming soon.</li>
+<li>NFTBattlePass (Plugin for NFT battle pass) – Coming soon.</li>
+<li>NFTHolderCommands (Plugin for ultimate NFT benefit customization using
+your NFT contract’s custom functions and commands) – Coming soon.</li>
+<li>CraftCoin (Plugin that creates /transfer command and CRAFT balance
+placeholders) – <a href="https://github.com/CraftToken/CraftCoinPlugin">Done</a>.</li>
+</ul>
+<blockquote>
+<p>Want to list your plugin here?
+<a href="https://github.com/CraftToken/Litepaper/edit/main/src/for-server-owners.md">Edit this page on GitHub</a>.</p>
+<p>In future, we’ll have our own plugin registry or a category in some
+existing plugin marketplace.</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="for-players"><a class="header" href="#for-players">For players</a></h1>
+<p>Welcome to the crypto space! At CraftCoin, we believe that cryptocurrencies
+is the future of money, as well as gaming.</p>
+<h2 id="how-to-use-crypto"><a class="header" href="#how-to-use-crypto">How to use crypto?</a></h2>
+<p>To create a crypto wallet, you need to just download a crypto wallet from
+your phone’s app store. You don’t need to go anywhere, confirm your
+address, phone number, even your real name. Just download – and you’re
+done. For every operation you need at least a fraction of a penny in MATIC
+(another cryptocurrency, but it’s not only for gaming) in your wallet,
+we’ll tell you how to get it (for free) later.</p>
+<h2 id="what-is-nft"><a class="header" href="#what-is-nft">What is NFT?</a></h2>
+<p>Unlike what some people think, NFTs are not just useless pictures or links.
+Most NFTs have a utility. Some are used in games, others give access to a
+product, closed community, or other benefits. For example, if you have
+<code>DIAMOND RANK</code> NFT in your wallet, you have <strong>[DIAMOND]</strong> rank on The
+Diamondverse and have access to more in-game features. Some NFTs give you
+access to additional game features, others are just collectibles, but one
+thing is clear: if you don’t think this NFT is worth buying, then don’t buy
+it.</p>
+<h2 id="crypto-is-a-scam"><a class="header" href="#crypto-is-a-scam">Crypto is a scam</a></h2>
+<p>Unlike popular myths, it’s not. Yes, there are a lot of scams in crypto,
+but in general, crypto is not a scam. There are also scams in fiat (“real”
+money), that’s how our world works. Crypto is a completely new world with
+new types of scams, and some of the most popular ones are listed below.
+Actually, crypto is safer than traditional banks because you don’t need to
+trust anyone and enter your confidential information (like card numbers),
+just keep your seed phrase safe and nothing bad will happen.</p>
+<h3 id="how-to-avoid-scams"><a class="header" href="#how-to-avoid-scams">How to avoid scams?</a></h3>
+<p>To access a server or a dapp (decentralized app) you need to connect your
+wallet using a QR code. You can connect to any QR code, it’s completely
+safe, but be aware of these things:</p>
+<ol>
+<li>When you perform a transaction, a small (usually less than $0.01)
+transaction fee in MATIC is taken from your balance, it’s OK. You are
+safe to send any transaction unless:
+<ul>
+<li>The transaction is “Approve”. It means you allow to spend some of
+your tokens, sometimes it’s infinity. Always look at the amount and
+check if you trust the developer. If you’re trying to get a free
+NFT and the server wants 1000000000 CRAFT approval, it’s probably a
+scam.</li>
+<li>The transaction is “Transfer”. It means you’re going to transfer your
+tokens to the server or a developer. Again, only confirm this
+transaction if you trust the developer.</li>
+</ul>
+</li>
+<li>Fake NFTs. Don’t <strong>search</strong> NFT collections, use official links from
+server, server’s website, discord or any other official source, anyone
+can create NFTs with any name, picture and description they want.</li>
+<li>Scam tokens. Unless you know what you’re doing and what you’re going to
+buy, you probably don’t need to buy tokens other than CRAFT and MATIC.</li>
+<li>DM scammers. Don’t send them your seed phrase! Your 12 words (or
+Private Key) is your access to your wallet, don’t show them if someone
+asks you. Even if they’re claiming to be CraftCoin support.</li>
+<li>Fake giveaways. There’s a lot of YouTube livestreams with Elon Musk or
+other famous people who ask you to send your crypto and get 2x more. I
+know it’s obvious for most of you, but there are people who actually
+lose money on this.</li>
+<li>Fake websites. Make sure you don’t make a typo in a website’s address.
+Use bookmarks if you want to be 100% sure. By the way, if you follow the
+rules from <code>1</code>, you should be safe browsing fake websites.</li>
+</ol>
+<h2 id="starting-without-investment"><a class="header" href="#starting-without-investment">Starting without investment</a></h2>
+<p>Your first step would be obtaining NFTs from servers. You can do it in
+different ways, depending on server where you play. If you have earned your
+NFT but can’t claim it (because your balance is 0 and you don’t want to buy
+crypto), ask us at Discord and we’ll help you. Then you can sell your NFT
+for CRAFT, exchange CRAFT for MATIC and now you have enough MATIC for your
+future needs. We would appreciate if you donate some MATIC to other players
+in Discord who need some.</p>
+<blockquote>
+<p>Right now we’re playing in testing mode and MATIC and CRAFT are free! If
+you’re using <a href="https://testwallet.craftcoin.tech">our test wallet</a>, click
+the “Get MATIC” button on the top of the page.</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="for-play-to-earn-gamers"><a class="header" href="#for-play-to-earn-gamers">For play-to-earn gamers</a></h1>
+<p>Welcome to Minecraft. In order to get started, you need to buy Minecraft
+from https://minecraft.net and find a server to play. Right now we have our
+own server for testing called The Diamondverse, and it will be launched on
+testnet soon. We might airdrop some real tokens for most active testnet
+players and contributors after IDO, but that decision will be made by DAO.</p>
+<h2 id="traditional-game-modes"><a class="header" href="#traditional-game-modes">Traditional game modes</a></h2>
+<p>Minecraft players have advantage over those who haven’t played Minecraft
+before, which is pretty fair given that our games depend mostly on skill.
+In play-to-earn games you can make money by either gambling, ponzi schemes
+or skill-based games, and we decided to choose the last option. By the way,
+gambling is banned by Minecraft EULA.</p>
+<h2 id="play-to-earn-game-modes"><a class="header" href="#play-to-earn-game-modes">Play-to-earn game modes</a></h2>
+<p>While at The Diamondverse we don’t have play-to-earn based game modes, we
+have integrated play-to-earn mechanics into traditional game modes. For
+example, we have a skyblock mode where islands are NFTs, we have burnable
+island expansion NFTs, you can wrap your items into NFTs, buy/sell and
+unwrap into in-game items, and there’s more to come.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="for-developers"><a class="header" href="#for-developers">For Developers</a></h1>
+<p>If you want to develop crypto plugins that use NFTs or smart contracts, you
+need to know 2 things:</p>
+<ul>
+<li>How to code plugins</li>
+<li>How to code smart contracts</li>
+</ul>
+<p>We don’t have API docs yet, because API is still not stable, but we’re
+working on it. We use <a href="https://docs.web3j.io/4.8.7/quickstart/">Web3j</a> and
+<a href="https://docs.walletconnect.com/">WalletConnect</a> for most web3
+interactions. WalletConnect integration is handled by <a href="https://github.com/CraftToken/WalletConnectMC">WalletConnectMC</a>
+plugin and its API.</p>
+<p>Right now we need contributors and servers, later we will have a plugin
+marketplace and grants for servers. Also, contributors may receive rewards
+like NFTs they created, or some amount of CRAFT, but contributor rewards
+are not guaranteed. Until the DAO is implemented, the founder will decide
+how much should we pay every contributor individually.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="roadmap"><a class="header" href="#roadmap">Roadmap</a></h1>
+<h2 id="q2-2022"><a class="header" href="#q2-2022">Q2 2022</a></h2>
+<ol>
+<li><input disabled="" type="checkbox" checked=""/>
+WalletConnect integration, essential plugins for building a crypto
+server.</li>
+</ol>
+<h2 id="q3-2022"><a class="header" href="#q3-2022">Q3 2022</a></h2>
+<ol start="2">
+<li><input disabled="" type="checkbox"/>
+Launch The Diamondverse on testnet – the first server to adopt
+CRAFT. If we want a community to adopt CRAFT, we need to do it ourselves
+to see possible pitfalls and provide integration examples.</li>
+<li><input disabled="" type="checkbox"/>
+Write all plugins listed <a href="./for-server-owners.html#plugins">here</a>.</li>
+<li><input disabled="" type="checkbox"/>
+Stabilize APIs, write technical documentation, some plugin examples.</li>
+<li><input disabled="" type="checkbox"/>
+Cross-server on-chain guilds and friends system.</li>
+<li><input disabled="" type="checkbox"/>
+Player profile dapp.</li>
+</ol>
+<h2 id="q4-2022"><a class="header" href="#q4-2022">Q4 2022</a></h2>
+<ol start="7">
+<li><input disabled="" type="checkbox"/>
+Fork some crypto wallet to improve gaming experience (player profile,
+built-in NFT marketplace, off-chain data providers, improved security).</li>
+<li><input disabled="" type="checkbox"/>
+Create a DAO.</li>
+<li><input disabled="" type="checkbox"/>
+Move The Diamondverse to mainnet (or create Diamondverse 2.0).</li>
+<li><input disabled="" type="checkbox"/>
+Grants for servers and minecraft-specific dapps.</li>
+<li><input disabled="" type="checkbox"/>
+Partnerships with existing Minecraft servers.</li>
+</ol>
+<h2 id="2023"><a class="header" href="#2023">2023</a></h2>
+<ol start="12">
+<li><input disabled="" type="checkbox"/>
+Plugin marketplace or a category in an existing plugin repository.</li>
+<li><input disabled="" type="checkbox"/>
+A new DAO platform with richer proposals: yes/no <strong>WITH</strong> multiple
+options, number input, multiple numbers/yes/no, that is built for
+players and frequent usage, like choosing “building of the week” (its
+author will receive CRAFT) or choosing how much we should pay our
+contributors.</li>
+<li><input disabled="" type="checkbox"/>
+Player-bound non-transferable NFT that will be used for voting along
+with staked CRAFT. They will be given to everyone who has a genuine
+paid version of Minecraft. Maybe we’ll add other player-bound NFTs that
+will increase player’s voting power and manually give it to active
+community members.</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="testing-the-diamondverse-not-available-yet-see-roadmap"><a class="header" href="#testing-the-diamondverse-not-available-yet-see-roadmap">Testing The Diamondverse (not available yet, see <a href="./roadmap.html">Roadmap</a>)</a></h1>
+<p>Testing is one of the most important things in game development, especially
+in public testing phase, so we want to reward most active testers with
+Tester NFT. Tester NFT will be only available at the testnet stage of The
+Diamondverse and it will grant early access to the new game modes and
+updates of The Diamondverse after its mainnet release. Also, these NFTs have
+a level that will increase for every bug that you find. More points = more
+rewards.</p>
+<h2 id="test-wallet"><a class="header" href="#test-wallet">Test wallet</a></h2>
+<p>We have a <a href="https://testwallet.craftcoin.tech">test wallet</a> that can be used
+for testing. You don’t even need to download it, it’s right in your browser.</p>
+<h2 id="bug-bounty-testnet"><a class="header" href="#bug-bounty-testnet">Bug bounty (testnet)</a></h2>
+<table><thead><tr><th>Type of bug</th><th>NFT Points</th><th>Bounty (mainnet CRAFT)</th></tr></thead><tbody>
+<tr><td>Typo or misspelling</td><td>1</td><td>10</td></tr>
+<tr><td>Minor bug (visual)</td><td>3</td><td>30</td></tr>
+<tr><td>Bug (something works not the way it’s supposed to)</td><td>10</td><td>100</td></tr>
+<tr><td>Major bug (server crash, DoS, etc.)</td><td>100</td><td>1000</td></tr>
+<tr><td>Critical bug (NFT, tokens, smart contract hack)</td><td>1000</td><td>More</td></tr>
+</tbody></table>
+<p><strong>IMPORTANT:</strong> If you find a critical bug, don’t create an issue on GitHub,
+message <code>Sliman4#4461</code> in Discord and we’ll figure it out. Please don’t
+abuse them, or we may redeploy the token contract and reset all balances.</p>
+<table><thead><tr><th>Level</th><th>Points</th></tr></thead><tbody>
+<tr><td>1</td><td>0</td></tr>
+<tr><td>2</td><td>100</td></tr>
+<tr><td>3</td><td>500</td></tr>
+<tr><td>4</td><td>1,000</td></tr>
+<tr><td>5</td><td>2,500</td></tr>
+<tr><td>6</td><td>5,000</td></tr>
+<tr><td>7</td><td>10,000</td></tr>
+<tr><td>8</td><td>25,000</td></tr>
+<tr><td>9</td><td>50,000</td></tr>
+<tr><td>10</td><td>100,000</td></tr>
+</tbody></table>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+    </body>
+</html>
